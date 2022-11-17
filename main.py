@@ -1,16 +1,14 @@
 import time
-import cv2
 import pytesseract
-from model import Tree 
 from agent import Agent
-from cardReader import Suits, Capture
+from cardReader import  Capture
 import imutils
 
 def main():
-    flag = False
+    flag = 0
     agent = Agent()
-    tree = Tree()
-    suits = Suits()
+    # tree = Tree()
+    # suits = Suits()
     capture = Capture()
 
     agent.init_game()
@@ -44,14 +42,14 @@ def main():
     L2 = pytesseract.image_to_string(card2Letter,lang='eng',config=custom_config)
     print(f'card 1 number: {L1} and card 2: {L2}')
 
-    for i in range(0,250):
+    while flag<1000:
         # check if the menu is active 
         text = agent.get_menu() 
         state = agent.get_state()
         deal = agent.get_deal()
         if text == "Call":
-            # await and check if you got the first 3 cards, make des dep on rank or Call
-            agent.call()
+            print("here")
+            agent.make_decision()
         if text == "Check":
             aux = agent.getHand1()
             agent.make_decision()
@@ -60,8 +58,9 @@ def main():
             agent.continue_playing()
         if deal == "Deal Again":
             agent.continue_playing()
-        print(state, deal, sep=" ")
+        print(flag, sep=" ")
         time.sleep(1)
+        flag +=1
 
     print("Beeep boop game over")
     time.sleep(2)

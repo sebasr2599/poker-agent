@@ -1,11 +1,13 @@
 # Poker Agent 
 ## Description
-...
+This is an implementation of a model-reflex Agent for the class of Intelligent Systems.
+The agent uses a model-reflex architecture, with a partial environment.
+The model uses the existent OCR tesseract to correctly identify the characters in the screen and some OpenCV work to identify the Suits of the cards.
 Data set from https://archive.ics.uci.edu/ml/datasets/Poker+Hand
-References --delete
-http://rstudio-pubs-static.s3.amazonaws.com/59520_f25e40618a3a442ca45b110b57a24a6f.html
-https://walintonc.github.io/papers/ml_pokerhand.pdf
 ## How to use
+```
+python main.py
+```
 ## Dependencies
 - cv2
 - numpy
