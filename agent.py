@@ -102,7 +102,6 @@ class Agent:
         rankStr = self.capture.imageToString(rank)
         suitStr = self.suit.card_suit(suit)
 
-        print(f'The rank of the card is: {rankStr} and the suit is: {suitStr}')
         return [self.rankToInt(rankStr), suitStr]
 
     def make_decision(self):

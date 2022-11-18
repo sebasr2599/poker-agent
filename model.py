@@ -45,8 +45,6 @@ class Tree:
             arr = self.permamut_6(cardsList)
             pred = self.d_tree.predict(arr)
             return np.min(pred[np.nonzero(pred)])  
-        elif listLen == 7:
-            print("list of 7 cards")
         return 0
 
     def permamut_6(self, arr):
